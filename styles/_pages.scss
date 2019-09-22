@@ -77,6 +77,7 @@ form {
     .message-input {
         height: 200px;
         border: 1px solid #c0c0c0;
+        padding: 1em;
     }
 
     .btn {
@@ -89,6 +90,7 @@ form {
         max-width: 200px;
         justify-self: end;
         cursor: pointer;
+        margin-top: 1em;
     }
 
     .btn:hover {
