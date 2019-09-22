@@ -1,0 +1,136 @@
+$main: #2a311f;
+$accent: #6d7340;
+$text-primary: #f4ffe8;
+$nav-hover: #939b59;
+$highlight: #A3BF78;
+$footer-bg: #f1f1f1;
+
+body {
+    font-family: 'Livvic', sans-serif;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+a {
+    color: $main;
+}
+
+header {
+    color: $text-primary;
+    background: #161a10;
+
+    h1 {
+        font-weight: 700;
+        background: $accent;
+    }
+
+    nav {
+        background: $main;
+    }
+
+    .nav-list {
+        list-style: none;
+        font-size: 2rem;
+
+        a {
+            color: $text-primary;
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            color: $nav-hover;
+        }
+    }
+
+    .open-nav-button {
+        background: none;
+        color: $accent;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .close-nav-button {
+        background: none;
+        color: $text-primary;
+        border: none;
+        font-size: 3rem;
+        cursor: pointer;
+    }
+}
+
+.header-home {
+    background: none;
+}
+
+.hero {
+    color: $text-primary;
+
+    h2 {
+        font-weight: 400;
+    }
+
+    .hero-text {
+        font-weight: 200;
+        color: $text-primary;
+        border: 0;
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        background: $accent;
+        color: $text-primary;
+        border: 0;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        filter: brightness(.7);
+    }
+
+}
+
+.main-content {
+    h3::after {
+        content: " ";
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: $highlight;
+        margin-top: 10px;
+    }
+}
+
+
+
+.footer {
+    background: $footer-bg;
+    padding: 3em 0;
+
+    .footer-info {
+        filter: opacity(.3);
+    }
+
+    .footer-social-links {
+        font-size: 2rem;
+        color: $main;
+    }
+}
+
+@media(min-width: 800px) {
+    header {
+        .main-heading {
+            font-size: 2rem;
+        }
+
+        nav {
+            background: none;
+
+            .nav-list {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

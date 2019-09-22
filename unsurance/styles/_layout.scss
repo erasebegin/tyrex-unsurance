@@ -1,0 +1,197 @@
+.main-grid {
+    display: grid;
+    grid-template-columns: minmax(1px,1fr) minmax(300px,3fr) minmax(1px,1fr);
+    
+    .col {
+        grid-column: 2;    
+    }
+}
+
+header {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .main-heading {
+        padding: 1em 0 0;
+        text-align: center;
+        font-size: 1.5rem;
+        max-width: 220px;
+    }
+}
+
+//home page header behaves slightly differently than on other pages
+.header-home {
+    position: absolute;
+}
+
+ //NAVIGATION
+
+ nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    left: 100%;
+    transform: translateX(0);
+    transition: transform 250ms;
+}
+
+.nav-opened {
+    transform: translateX(-100%);
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+
+.close-nav-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+//HERO
+
+.hero {
+
+    background-image: url(https://i.ibb.co/KspFPD5/hannah-troupe-0-FQne-B1-Vja-M-unsplash.jpg);
+    background-size: 400px;
+    background-blend-mode: hard-light(0.5);
+    padding: 8em 0 2em;
+
+    //REMINDER: Created several implicit rows on .main-grid here
+
+    
+    h2 {
+        grid-area: 2 / 2;
+        align-self: end;
+    }
+
+    .hero-text {
+        grid-area: 3 / 2;
+        margin-bottom: 2em;
+    }
+    
+    .btn {
+        grid-area: 4 / 2;
+        align-self: start;
+        max-width: 150px;
+        padding: .5em;
+    }
+}
+
+//MAIN CONTENT
+
+.main-content {
+    padding: 3em 0;
+
+    .section-title {
+        margin: 2em 0 1em 0;
+    }
+
+    ul {
+        margin-left: 2em;
+        margin-top: 1em;
+    }
+}
+
+//FOOTER
+
+.footer {
+    margin-top: 2em;
+}
+
+//MEDIA QUERIES
+
+@media(min-width: 800px) {
+
+    .hero {
+        background-size: 1000px;
+        background-position: 200px 500px;
+    }
+
+    .main-grid {
+        grid-template-columns: minmax(1em,1fr) repeat(4, minmax(200px, 2fr)) minmax(1em,1fr);
+        column-gap: 3em;
+
+        .col {
+            grid-column: span 1;
+        }
+    
+        .col:first-child {
+            grid-column: 2 / span 1;
+        }
+    
+        h2 {
+            grid-area: 2 / 2 / 3 / 5;
+        }
+    
+        .hero-text {
+            grid-area: 3 / 2 / 4 / 5;
+            max-width: 500px;
+        }
+
+        .main-page-center {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .main-page-center::after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            grid-area: 4 / 2 / 5 / 5;
+        }
+    
+        .footer-info {
+            grid-column: 3 / 6; 
+        }
+
+
+    }
+
+    header {
+
+        .main-heading {
+            width: 100%;
+            margin-left: 1em;
+            min-width: 300px;
+        }
+
+        nav {
+            position: initial;
+            max-width: 30vw;
+    
+            .nav-list {
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: space-around;
+
+                a {
+                    margin-left: 1em;
+                    font-weight: 700;
+                }
+            }
+        }
+    
+        .open-nav-button, 
+        .close-nav-button {
+            display: none;
+        }
+        
+    }
+
+} //close media
+
+
